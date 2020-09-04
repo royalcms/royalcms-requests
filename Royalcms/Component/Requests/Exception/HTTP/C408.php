@@ -1,6 +1,6 @@
 <?php
 
-namespace Royalcms\Component\Requests\Transport\HTTP;
+namespace Royalcms\Component\Requests\Exception\HTTP;
 
 use Royalcms\Component\Requests\Exception\HTTP;
 

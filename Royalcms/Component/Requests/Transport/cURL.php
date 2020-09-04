@@ -3,7 +3,7 @@
 namespace Royalcms\Component\Requests\Transport;
 
 use Royalcms\Component\Requests\Contracts\Transport;
-use Royalcms\Component\Requests\Transport\cURL;
+use Royalcms\Component\Requests\Exception\Transport\cURL as cURLException;
 use Royalcms\Component\Requests\Exception;
 use Royalcms\Component\Requests\Requests;
 
@@ -246,9 +246,9 @@ class cURL implements Transport {
 				if (CURLE_OK !== $done['result']) {
 					//get error string for handle.
 					$reason = curl_error($done['handle']);
-					$exception = new cURL(
+					$exception = new cURLException(
 									$reason,
-									cURL::EASY,
+                        cURLException::EASY,
 									$done['handle'],
 									$done['result']
 								);
